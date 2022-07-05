@@ -1,0 +1,65 @@
+.hallway {
+  display: none;
+}
+
+.study {
+  display: none;
+}
+
+.attic{
+  display: none;
+}
+
+.cellar {
+  display: none;
+}
+
+.parlorLocked {
+  display: none;
+}
+
+.attack {
+  display: none;
+}
+
+.parlorInterior {
+  display: none;
+}
+
+.parlorUnlocked {
+  display: none;
+}
+#hallwayError {
+  display: none;
+}
+
+#studyError {
+  display: none;
+}
+
+#cellarError {
+  display: none;
+}
+
+#atticError {
+  display: none;
+}
+
+#parlorUnlockedError {
+  display: none;
+}
+
+#parlorError {
+  display: none;
+}
+
+#parlorLockedError {
+  display: none;
+}
+
+#pickUpLaser {
+ display: none;
+}
+ #pickUpLaser {
+  display: none;
+ }

@@ -6,42 +6,64 @@
 <body>
   <div class="story">
     <p>"The town of Arkham hums with electricity. Holovid displays wash the night sky with neon colors. The streets bustle with hover cars, traders and cargo trains taking parts, products and garbage to and from Central Robotics Development.Underneath the noise and bustle a series of mysterious disapperances have plagued the manufacturing hub. First Jim Grisswald, a robotics engineer, reported his youngest daughter Celia had gone missing. Then, Amy Sinclair reported her fiancé never came home after a night of drinking with friends. One by one more disapperances piled up until one day a young cargo hauler found Celia's body on the edge of town at the dump. As a private investigator you've been hired to sort out what's really happening"</p>
-    <button type="button" class="btn-outline-success">Start</button>
+    <button type="button" id="startButton"class="btn-outline-success">Start</button>
   </div>
+  <form>
   <div class="hallway">
     <p>Muddy footprints lead through the hallway towards a closed door. There are three other doors slightly ajar you can see stairs leading up through the attic door, stairs leading down through the cellar door, and some books and shelves in what appears to be the study.</p> 
-    <label for="hallwayAction">What would you like to do?</label> 
+    <div id="hallwayError"><p>Please select a viable option.</p></div>
+    <label for="hallway">What would you like to do?</label> 
     <input id="hallway" type="text">
+    <button type="button" id="hallwayButton">Submit</button>
+  </div>
+  <div class="study">
+    <p>"You've been investigating the strange disappearances occuring in Arkham for several days now. You see the messy desk is covered in holovid articles, police reports, and witness accounts. You hear heavy footsteps plodding down the hallway outside the study room. The steps stop just moment before the steps continue down the hallway."</p>
+    <div id="studyError"><p>Please select a viable option.</p></div>
+    <label for="studyAction">What would you want to do?</label>
+    <input id="study" type="text">
+    <button type="button" id="studyButton">Submit</button>
   </div>
   <div class="cellar">
     <p>The stairs leading down to the cellar are covered in muddy fooprints. The cellar has a large hole in the wall, big enough for someone to squeeze through. You peek your head through the wall and see it leads into the city sewer system.</p>
+    <div id="cellarError"><p>Please select a viable option.</p></div>
     <label for="cellarAction">What would you like to do?</label>
     <input id="cellar" type="text">
+    <button type="button" id="cellarButton">Submit</button>
   </div>
   <div class="attic">
     <p>"You climb the ladder to the attic. The feeling of being watched paralyzes you before making it to the top of the ladder. For just a moment you think you can see the faint outline of a person in the corner. You notice a old dusty old laser gun is within reach of the opening to the attic."</p>
+    <div id="atticError"><p>Please select a viable option.</p></div>
+    <div id="pickUpLaser"><p>You pick up the laser gun, it is at partial charge still, probably 1 or 2 shots left!</p></div>
     <label for="atticAction">What would you want to do?</label>
     <input id="attic" type="text">
+    <button type="button" id="atticButton">Submit</button>
   </div>
-  <div class="parlor-unlocked">
+  <div class="parlorUnlocked">
     <p>You take aim and fire at the center of the laser field. The lasers spark and shudders before blinking out of exisitance.</p>
-    <label for="parlorAction">What would you like to do?</label>
-    <input id="parlor-unlocked" type="text">
-  </div>
-  <div class="parlor-interior">
     <p>Jim Grisswald stands in the center of the parlor. "What have you done to the laser-field?" he screams, furious. Before you can answer a mechanical whirring gets louder and louder and a humanoid android bursts through the wall of the parlor advancing towards you.</p>
-    <label for="parlorInteriorAction">What would you like to do?</label>
-    <input id="parlor-interior" type="text">
+    <div id="parlorUnlockedError"><p>Please select a viable option.</p></div>
+    <label for="parlorAction">What would you like to do?</label>
+    <input id="parlorUnlocked" type="text">
+    <button type="button" id="parlorUnlockedButton">Submit</button>
   </div>
-  <div class="parlor-Locked">
-    <p>The entrance the parlor is blocked by the faint blue glow of a laser-field. You pick up a button from the door and toss it at the laser-field and watch it incinerate. Perhaps theres something that can help in the cellar or attic. You cannot move to the parlor.</p>
+  <!-- <div class="parlorInterior">
+    <p>Jim Grisswald stands in the center of the parlor. "What have you done to the laser-field?" he screams, furious. Before you can answer a mechanical whirring gets louder and louder and a humanoid android bursts through the wall of the parlor advancing towards you.</p>
+    <div id="parlorError"><p>Please select a viable option.</p></div>
+    <label for="parlorInteriorAction">What would you like to do?</label>
+    <input id="parlorInterior" type="text">
+    <button type="button" id="parlorButton">Submit</button>
+  </div> -->
+  <div class="parlorLocked">
+    <p>The entrance the parlor is blocked by the faint blue glow of a laser-field. You pick up a button from the door and toss it at the laser-field and watch it incinerate. Perhaps theres something that can help in the study, cellar, or attic. You cannot move to the parlor.</p>
+    <div id="parlorLockedError"><p>Please select a viable option.</p></div>
   <label for="parlor">What would you like to do?</label>
   <input id="parlor" type="text">
+  <button type="button" id="parlorLockedButton">Submit</button>
   </div>
   <div class="attack">
     <p>"The Andriod falls to the ground, having taken its last step. Jim explains Central Robotics Development had created an Andriod that became self aware, eventually lashing out at its creators and was the cause of the disapperances.</p>
     <p>"Case is solved, you have save the world from Andriod attacking.</p>
   </div>
-  
+  </form>
 </body>
 </html>
