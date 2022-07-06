@@ -157,13 +157,14 @@ $(document).ready(function() {
     }
   });
 
-  $("#parlorButton").click(function() {
+  $("#parlor Button").click(function() {
     let parlorUnlockedAction = $("#parlorUnlocked").val();
     if (parlorUnlockedAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
     } else if (parlorUnlockedAction.toLowerCase() === "use laser gun") {
+      battle(character, monster);
       if (monster.health === 0) {
         $(".cyborgDies").show();
         $(".parlorUnlocked").hide();
@@ -172,6 +173,8 @@ $(document).ready(function() {
         $(".characterDies").show();
         $(".parlorUnlocked").hide();
         $("#parlorUnlockedError").hide();
+      } else {
+        $(".exchangeFire").show();
       }
 
     }

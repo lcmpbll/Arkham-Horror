@@ -26,7 +26,19 @@
   display: none;
 }
 
-.attack {
+.exchangeFire {
+  display: none;
+}
+
+.roboBattle {
+  display: none;
+}
+
+.cyborgDies {
+  display: none;
+}
+
+.characterDies {
   display: none;
 }
 
