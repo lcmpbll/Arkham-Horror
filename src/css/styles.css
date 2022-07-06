@@ -6,6 +6,10 @@
   display: none;
 }
 
+.alley2 {
+  display: none;
+}
+
 .hallway {
   display: none;
 }
@@ -19,6 +23,10 @@
 }
 
 .cellar {
+  display: none;
+}
+
+.cellarReturn {
   display: none;
 }
 
@@ -83,6 +91,10 @@
  }
 
 .authorities{
+  display: none;
+}
+
+.inventory {
   display: none;
 }
 
