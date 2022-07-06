@@ -1,15 +1,18 @@
 import Character from './js/character.js';
+import Monster from './js/monster.js';
+import {battle} from './js/battle.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
 let character = new Character;
+let monster = new Monster;
 
 $(document).ready(function() {
   $("#startButton").click(function(){
-  $(".hallway").show();
-  $(".story").hide();
+    $(".hallway").show();
+    $(".story").hide();
   
   });
   $("#hallwayButton").click(function() {
@@ -49,7 +52,7 @@ $(document).ready(function() {
     if (cellarAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
       $(".cellar").hide();
-    } else if (cellarAction === "use laser gun" && character.laserPossession === true) {
+    } else if (cellarAction === "use laser gun" && character.laserPosession === true) {
       $("#killRats").show();
       character.increaseStats();
     } else {
@@ -64,7 +67,7 @@ $(document).ready(function() {
       $(".attic").hide();
     } else if (atticAction.toLowerCase() === "pick up laser gun") {
       $("#pickUpLaser").show();
-     character.pickUpLaser();
+      character.pickUpLaser();
     } else {
       $("#atticError").show();
     }
@@ -100,6 +103,7 @@ $(document).ready(function() {
       $(".hallway").show();
       $(".parlorUnlocked").hide();
     } else if (parlorUnlockedAction.toLowerCase() === "use laser gun") {
+      battle(character, monster);
       $(".attack").show();
       $(".parlorUnlocked").hide();
     } else {
