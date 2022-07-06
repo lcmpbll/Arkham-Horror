@@ -41,6 +41,10 @@
   display: none;
 }
 
+#killRats {
+  display: none;
+}
+
 #atticError {
   display: none;
 }
@@ -60,9 +64,11 @@
 #pickUpLaser {
  display: none;
 }
- #pickUpLaser {
+
+#pickUpLaser {
   display: none;
  }
+
 
 body {
   background-color: black;
