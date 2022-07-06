@@ -2,6 +2,7 @@ export default class Monster {
   constructor(damage) {
     this.damage = damage;
     this.health = 10;
+    this.status = "alive"
     
   }
 

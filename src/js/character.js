@@ -6,7 +6,7 @@ export default class Character {
   this.inventory = [];
   this.health = 10;
   this.laserPosession = false;
-  
+  this.status = "alive"
   this.aim = 0;
  }
   pickUpLaser() {
