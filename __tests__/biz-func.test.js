@@ -46,7 +46,7 @@ describe("Character", () => {
       expect(newChar.health).toEqual(11);
     })
 
-    test("Should return damage between 1-6 when shootLaser is called", () => {
+    test("Should return damage between 0-6 when shootLaser is called", () => {
       newChar.shootLaser();
       expect(newChar.damage).toBeGreaterThanOrEqual(0);
       expect(newChar.damage).toBeLessThanOrEqual(6);
