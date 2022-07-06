@@ -4,6 +4,13 @@
   <title>Arkham Horror</title>
 </head>
 <body>
+  <div class="upperHeader"></div>
+  <div class="lowerHeader"></div>
+  <div class="leftSidebar1"></div>
+  <div class="leftSidebar2"></div>
+  <div class="rightSidebar1"></div>
+  <div class="rightSidebar2"></div>
+  <div class="container">
   <div class="story">
     <p>"The town of Arkham hums with electricity. Holovid displays wash the night sky with neon colors. The streets bustle with hover cars, traders and cargo trains taking parts, products and garbage to and from Central Robotics Development.Underneath the noise and bustle a series of mysterious disapperances have plagued the manufacturing hub. First Jim Grisswald, a robotics engineer, reported his youngest daughter Celia had gone missing. Then, Amy Sinclair reported her fiancé never came home after a night of drinking with friends. One by one more disapperances piled up until one day a young cargo hauler found Celia's body on the edge of town at the dump. As a private investigator you've been hired to sort out what's really happening"</p>
     <button type="button" id="startButton"class="btn-outline-success">Start</button>
@@ -17,7 +24,7 @@
     <button type="button" id="hallwayButton">Submit</button>
   </div>
   <div class="study">
-    <p>"You've been investigating the strange disappearances occuring in Arkham for several days now. You see the messy desk is covered in holovid articles, police reports, and witness accounts. You hear heavy footsteps plodding down the hallway outside the study room. The steps stop just moment before the steps continue down the hallway."</p>
+    <p>"Inside the study you see a messy desk is covered in holovid articles, police reports, and witness accounts. You hear heavy footsteps plodding down the hallway outside the study door. The faint light passing through the keyhole goes dark for just a moment before the steps continue down the hallway."</p>
     <div id="studyError"><p>Please select a viable option.</p></div>
     <label for="studyAction">What would you want to do?</label>
     <input id="study" type="text">
@@ -25,7 +32,11 @@
   </div>
   <div class="cellar">
     <p>The stairs leading down to the cellar are covered in muddy fooprints. The cellar has a large hole in the wall, big enough for someone to squeeze through. You peek your head through the wall and see it leads into the city sewer system.</p>
-    <div id="cellarError"><p>Please select a viable option.</p></div>
+     <div id="killRats">
+      <p>Way to go you have kill 3 rats in the cellar coming from the sewage.</p>
+    </div>
+      <div id="cellarError"><p>Please select a viable option.</p></div>
+   
     <label for="cellarAction">What would you like to do?</label>
     <input id="cellar" type="text">
     <button type="button" id="cellarButton">Submit</button>
@@ -65,5 +76,8 @@
     <p>"Case is solved, you have save the world from Andriod attacking.</p>
   </div>
   </form>
+  </div>
+  <div class="upperFooter"></div>
+  <div class="lowerFooter"></div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-// import bizFunc from './js/biz-func.js';
+import Character from './js/biz-func.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -48,6 +48,9 @@ $(document).ready(function() {
     if (cellarAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
       $(".cellar").hide();
+    } else if (cellarAction === "use laser gun") {
+      $("#killRats").show();
+      Character.increaseStats();
     } else {
       $("#cellarError").show();
     }
@@ -60,6 +63,7 @@ $(document).ready(function() {
       $(".attic").hide();
     } else if (atticAction.toLowerCase() === "pick up laser gun") {
       $("#pickUpLaser").show();
+     Character.pickUpLaser();
     } else {
       $("#atticError").show();
     }
@@ -70,7 +74,7 @@ $(document).ready(function() {
     if (parlorAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
       $(".parlorLocked").hide();
-    } else if (parlorAction.toLowerCase() === "use laser gun") {
+    } else if (parlorAction.toLowerCase() === "use laser gun" ) {
       $(".parlorUnlocked").show();
       $(".parlorLocked").hide();
     } else if (parlorAction.toLowerCase() === "move to attic") {

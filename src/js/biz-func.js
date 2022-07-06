@@ -1,7 +1,8 @@
 //let character = new Character();
 export default class Character {
 
-  constructor () {
+  constructor (damage) {
+  this.damage = damage;
   this.inventory = [];
   this.health = 10;
   this.aim = 0;
