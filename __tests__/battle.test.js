@@ -40,4 +40,14 @@ describe('battle', () => {
     expect(newChar.health).toBeLessThanOrEqual(0);
     expect(newChar.status).toEqual("dead");
   })
+
+  test('should report that the monster is dead if their health goes to 0 or below', () => {
+    battle(newChar, newMonster); 
+    battle(newChar, newMonster);
+    battle(newChar, newMonster);
+    battle(newChar, newMonster);
+    battle(newChar, newMonster);
+    expect(newMonster.health).toBeLessThanOrEqual(0);
+    expect(newMonster.status).toEqual("dead");
+  })
 })

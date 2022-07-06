@@ -13,5 +13,11 @@ export const battle = (character, monster) => {
   } else {
     character.status = "alive"
   }
+
+  if(monster.health <= 0) {
+    monster.status = "dead";
+  } else {
+    monster.status = "alive"
+  }
   return "Battle is happening";
 }
