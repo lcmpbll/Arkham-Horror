@@ -54,6 +54,10 @@
   display: none;
 }
 
+#killRats {
+  display: none;
+}
+
 #atticError {
   display: none;
 }
@@ -73,12 +77,15 @@
 #pickUpLaser {
  display: none;
 }
- #pickUpLaser {
+
+#pickUpLaser {
   display: none;
  }
+
 .authorities{
   display: none;
 }
+
 body {
   display: flex;
   align-items: center;

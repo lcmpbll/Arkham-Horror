@@ -1,10 +1,12 @@
-import Character from './js/biz-func.js';
+import Character from './js/character.js';
+import Monster from './js/monster.js';
+import {battle} from './js/battle.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-
-
+let character = new Character;
+let monster = new Monster;
 $(document).ready(function() {
 
   $("#menuButton").click(function() {
@@ -13,8 +15,12 @@ $(document).ready(function() {
   })
 
   $("#startButton").click(function(){
+
   $(".alley").show();
   $(".story").hide();
+
+  
+
   });
 
   $("#alleyButton").click(function() {
@@ -78,11 +84,9 @@ $(document).ready(function() {
     if (cellarAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
       $(".cellar").hide();
-      $("#cellarError").hide();
-      $("#killRats").hide();
-    } else if (cellarAction === "use laser gun") {
-      $("#killRats").show();
-      Character.increaseStats();
+   } else if (cellarAction === "use laser gun" && character.laserPosession === true) {
+   $("#killRats").show();
+      character.increaseStats();
     } else {
       $("#cellarError").show();
     }
@@ -97,7 +101,7 @@ $(document).ready(function() {
       $("#pickUpLaser").hide();
     } else if (atticAction.toLowerCase() === "pick up laser gun") {
       $("#pickUpLaser").show();
-     Character.pickUpLaser();
+      character.pickUpLaser();
     } else {
       $("#atticError").show();
     }
@@ -109,10 +113,13 @@ $(document).ready(function() {
       $(".hallway").show();
       $(".parlorLocked").hide();
       $("#parlorError").hide();
-    } else if (parlorAction.toLowerCase() === "use laser gun" ) {
+    } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === true ) {
       $(".parlorUnlocked").show();
       $(".parlorLocked").hide();
-      $("#parlorError").hide();
+       $("#parlorError").hide();
+    } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === false ) {
+      $("#parlorLockedError").show();
+
     } else if (parlorAction.toLowerCase() === "move to attic") {
       $(".attic").show();
       $(".parlorLocked").hide();
@@ -126,7 +133,7 @@ $(document).ready(function() {
       $(".parlorLocked").hide();
       $("#parlorError").hide();
     } else {
-      $("#parlorError").show();
+      $("#parlorLockedError").show();
     }
   });
 
@@ -137,6 +144,7 @@ $(document).ready(function() {
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
     } else if (parlorUnlockedAction.toLowerCase() === "use laser gun") {
+      battle(character, monster);
       $(".attack").show();
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
