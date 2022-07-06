@@ -103,13 +103,14 @@ $(document).ready(function() {
     }
   });
 
-  $("#parlorButton").click(function() {
+  $("#parlorLockedButton").click(function() {
     let parlorAction = $("#parlor").val();
     if (parlorAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
       $(".parlorLocked").hide();
       $("#parlorError").hide();
     } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === true ) {
+      console.log(character.laserPosession);
       $(".parlorUnlocked").show();
       $(".parlorLocked").hide();
       $("#parlorError").hide();
@@ -163,9 +164,16 @@ $(document).ready(function() {
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
     } else if (parlorUnlockedAction.toLowerCase() === "use laser gun") {
-      $(".attack").show();
-      $(".parlorUnlocked").hide();
-      $("#parlorUnlockedError").hide();
+      if (monster.health === 0) {
+        $(".cyborgDies").show();
+        $(".parlorUnlocked").hide();
+        $("#parlorUnlockedError").hide();
+      } else if (character.health === 0) {
+        $(".characterDies").show();
+        $(".parlorUnlocked").hide();
+        $("#parlorUnlockedError").hide();
+      }
+
     }
     else {
       $("#parlorUnlockedError").show();
