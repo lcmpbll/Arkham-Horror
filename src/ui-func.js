@@ -49,7 +49,7 @@ $(document).ready(function() {
     if (cellarAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
       $(".cellar").hide();
-    } else if (cellarAction === "use laser gun") {
+    } else if (cellarAction === "use laser gun" && character.laserPossession === true) {
       $("#killRats").show();
       character.increaseStats();
     } else {
