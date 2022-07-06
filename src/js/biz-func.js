@@ -5,13 +5,13 @@ export default class Character {
   this.damage = damage;
   this.inventory = [];
   this.health = 10;
-  this.laserPossession = false;
+  this.laserPosession = false;
   
   this.aim = 0;
  }
   pickUpLaser() {
   let laserGun = {"name" : "laser gun"};
-  this.laserPossession = true;
+  this.laserPosession = true;
   this.inventory.push(laserGun)
  }
   
@@ -22,9 +22,9 @@ export default class Character {
 
 shootLaser() {
   if (this.aim === 0) {
-   this.damage = 1 + Math.floor(Math.random() * 6);
+   this.damage = Math.floor(Math.random()* (6 + 1));
   } else {
-   this.damage = 3 + Math.floor(Math.random() * 6);
+   this.damage = 3 + Math.floor(Math.random() *(6 - 3 + 1));
   } 
   return this.damage;
 }

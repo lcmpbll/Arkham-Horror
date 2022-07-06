@@ -15,7 +15,7 @@ describe("Character", () => {
     });
     test("should create a character whose this.laserPosession is equal to false", () => {
       
-      expect(newChar.laserPossession).toEqual(false);
+      expect(newChar.laserPosession).toEqual(false);
       
     });
 
@@ -32,7 +32,7 @@ describe("Character", () => {
 
     test("should pick up laser and confirm true for laserPossession", () => {
       newChar.pickUpLaser();
-      expect(newChar.laserPossession).toEqual(true);
+      expect(newChar.laserPosession).toEqual(true);
     })
 
     test("should pick up laser and confirm true for laserPossession", () => {
@@ -48,7 +48,7 @@ describe("Character", () => {
 
     test("Should return damage between 1-6 when shootLaser is called", () => {
       newChar.shootLaser();
-      expect(newChar.damage).toBeGreaterThanOrEqual(1);
+      expect(newChar.damage).toBeGreaterThanOrEqual(0);
       expect(newChar.damage).toBeLessThanOrEqual(6);
       
     })

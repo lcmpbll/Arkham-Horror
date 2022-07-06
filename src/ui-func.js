@@ -75,9 +75,11 @@ $(document).ready(function() {
     if (parlorAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
       $(".parlorLocked").hide();
-    } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPossession === true ) {
+    } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === true ) {
       $(".parlorUnlocked").show();
       $(".parlorLocked").hide();
+    } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === false ) {
+      $("#parlorLockedError").show();
     } else if (parlorAction.toLowerCase() === "move to attic") {
       $(".attic").show();
       $(".parlorLocked").hide();
@@ -88,7 +90,7 @@ $(document).ready(function() {
       $(".study").show();
       $(".parlorLocked").hide();
     } else {
-      $("#parlorError").show();
+      $("#parlorLockedError").show();
     }
   });
 
