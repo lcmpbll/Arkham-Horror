@@ -1,4 +1,4 @@
-import Character from '../src/js/biz-func.js';
+import Character from '../src/js/character.js';
 
 
 describe("Character", () => {
