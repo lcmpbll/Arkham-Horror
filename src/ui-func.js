@@ -12,15 +12,11 @@ $(document).ready(function() {
   $("#menuButton").click(function() {
     $(".story").show();
     $(".menu").hide();
-  })
+  });
 
   $("#startButton").click(function(){
-
-  $(".alley").show();
-  $(".story").hide();
-
-  
-
+    $(".alley").show();
+    $(".story").hide();
   });
 
   $("#alleyButton").click(function() {
@@ -30,7 +26,7 @@ $(document).ready(function() {
       $(".alley").hide();
     } else if (alleyAction.toLowerCase() === "call the authorities"){
       $(".authorities").show();
-      $(".alley").hide()
+      $(".alley").hide();
       $("#alleyError").hide();
     } else $("#alleyError").show();
   });
@@ -38,7 +34,7 @@ $(document).ready(function() {
   $("#authoritiesButton").click(function() {
     $(".alley").show();
     $(".authorities").hide();
- });
+  });
 
   $("#hallwayButton").click(function() {
     let hallwayAction = $("#hallway").val();
@@ -84,8 +80,8 @@ $(document).ready(function() {
     if (cellarAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
       $(".cellar").hide();
-   } else if (cellarAction === "use laser gun" && character.laserPosession === true) {
-   $("#killRats").show();
+    } else if (cellarAction === "use laser gun" && character.laserPosession === true) {
+      $("#killRats").show();
       character.increaseStats();
     } else {
       $("#cellarError").show();
@@ -116,7 +112,7 @@ $(document).ready(function() {
     } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === true ) {
       $(".parlorUnlocked").show();
       $(".parlorLocked").hide();
-       $("#parlorError").hide();
+      $("#parlorError").hide();
     } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === false ) {
       $("#parlorLockedError").show();
 

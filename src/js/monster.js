@@ -3,7 +3,6 @@ export default class Monster {
     this.damage = damage;
     this.health = 10;
     this.status = "alive";
-    
   }
 
   monsterDamage() {

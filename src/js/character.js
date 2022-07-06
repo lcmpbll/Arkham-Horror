@@ -1,4 +1,3 @@
-//let character = new Character();
 export default class Character {
 
   constructor (damage) {
