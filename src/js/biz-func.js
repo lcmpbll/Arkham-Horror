@@ -12,7 +12,6 @@ export default class Character {
   pickUpLaser() {
   let laserGun = {"name" : "laser gun"};
   this.laserPossession = true;
-  
   this.inventory.push(laserGun)
  }
   
