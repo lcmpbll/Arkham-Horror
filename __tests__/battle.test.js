@@ -15,4 +15,11 @@ describe('battle', () => {
     
     expect(battle(newChar, newMonster)).toEqual("Battle is happening");
   });
+
+  test("should take the character damage value away from the monster health", () => {
+    battle(newChar, newMonster);
+
+    expect(newMonster.health).toBeGreaterThanOrEqual(1);
+    expect(newMonster.health).toBeLessThanOrEqual(9);
+  })
 })
