@@ -15,5 +15,11 @@ describe("Monster", () => {
     newMonster.monsterDamage();
     expect(newMonster.damage).toBeGreaterThanOrEqual(0);
     expect(newMonster.damage).toBeLessThanOrEqual(6);
-  })
+  });
+
+  // test("should subtract damage done by the character from monster health", () => {
+  //   newMonster.monsterHit();
+  //   expect(newMonster.health).toBeGreaterThanOrEqual(4)
+  //   expect(newMonster.health).toBeLessThanOrEqual(10)
+  // })
 });
