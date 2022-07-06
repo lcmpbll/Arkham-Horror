@@ -1,5 +1,3 @@
-// import Character from '../js/character.js';
-// import Monster from '../js/monster.js';
 
 export const battle = (character, monster) => {
  
@@ -11,13 +9,13 @@ export const battle = (character, monster) => {
   if(character.health <= 0) {
     character.status = "dead";
   } else {
-    character.status = "alive"
+    character.status = "alive";
   }
 
   if(monster.health <= 0) {
     monster.status = "dead";
   } else {
-    monster.status = "alive"
+    monster.status = "alive";
   }
   return "Battle is happening";
-}
+};
