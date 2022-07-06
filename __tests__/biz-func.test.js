@@ -1,10 +1,10 @@
-import exampleTestFunction from '../src/js/biz-func.js';
+import Character from '../src/js/biz-func.js';
 
 
-describe("exampleTestFunction", () => {
+describe("Character", () => {
 
   test("should....", () => {
-    expect(exampleTestFunction()).toEqual("hi there, from the deck")
+    
   });
 
 });
