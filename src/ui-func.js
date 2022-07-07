@@ -116,7 +116,6 @@ $(document).ready(function() {
       $("#parlorError").hide();
     } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === false ) {
       $("#parlorLockedError").show();
-
     } else if (parlorAction.toLowerCase() === "move to attic") {
       $(".attic").show();
       $(".parlorLocked").hide();
