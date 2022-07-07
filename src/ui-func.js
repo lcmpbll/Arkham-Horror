@@ -50,34 +50,39 @@ $(document).ready(function() {
     $(".authorities").hide();
     $('#alley2Error').hide();
   });
-
-  $("#alley2Button").click(function() {
-    let alley2Action = $("#alley2").val();
-    if ((alley2Action.toLowerCase() === "move to house") || (alley2Action.toLowerCase() === "move to the house")) {
-      $(".hallway").show();
-      $(".alley2").hide();
-      $('#alley2Error').hide();
-    } else $('#alley2Error').show();
-  });
+ $("#alley2Button").click(function() {
+  let alley2Action = $("#alley2").val();
+  if ((alley2Action.toLowerCase() === "move to house") || (alley2Action.toLowerCase() === "move to the house")) {
+    $(".hallway").show();
+    $(".alley2").hide();
+    $('#alley2Error').hide();
+  } else $('#alley2Error').show();
+  clearFields();
+ });
   $("#hallwayButton").click(function() {
     let hallwayAction = $("#hallway").val();
     if (hallwayAction.toLowerCase() === "move to attic") {
       $(".attic").show();
       $(".hallway").hide();
       $("#hallwayError").hide();
-    } else if (hallwayAction.toLowerCase() === "move to cellar") {
-      $(".cellar").show();
+    } else if (hallwayAction.toLowerCase()  === "move to cellar" && character.exploration === true) {
+      $(".cellarReturn").show();
       $(".hallway").hide();
       $("#hallwayError").hide();
-      $("#killRats").hide();
-    } else if (hallwayAction.toLowerCase() === "move to study") {
-      $(".study").show();
-      $(".hallway").hide();
-      $("#hallwayError").hide();
-    } else if (hallwayAction.toLowerCase() === "move to parlor") {
-      $(".parlorLocked").show();
-      $(".hallway").hide();
-      $("#hallwayError").hide();
+      $(".cellar").hide();
+  }else if (hallwayAction.toLowerCase() === "move to cellar"){
+    $(".cellar").show();
+    $(".hallway").hide();
+    $("#hallwayError").hide();
+    character.cellarExploration();
+  } else if (hallwayAction.toLowerCase() === "move to study") {
+    $(".study").show();
+    $(".hallway").hide();
+    $("#hallwayError").hide();
+  }else if (hallwayAction.toLowerCase() === "move to parlor") {
+    $(".parlorLocked").show();
+    $(".hallway").hide();
+    $("#hallwayError").hide();
     } else if (hallwayAction.toLowerCase() === "move to study") {
       $(".study").show();
       $(".hallway").hide();
@@ -94,10 +99,8 @@ $(document).ready(function() {
       $(".hallway").show();
       $(".study").hide();
       $("#studyError").hide();
-    } else{
-      $("#studyError").show();
-    }
-    clearFields();
+    } else {$("#studyError").show();
+    } clearFields();
   });
 
   $("#cellarButton").click(function() {
@@ -105,13 +108,24 @@ $(document).ready(function() {
     if (cellarAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
       $(".cellar").hide();
-    } else if (cellarAction === "use laser gun" && character.laserPosession === true) {
-      $("#killRats").show();
+      character.cellarExploration();
+   } else if (cellarAction.toLowerCase() === "use laser gun" && character.laserPosession === true) {
+   $("#killRats").show();
       character.increaseStats();
-    } else {
-      $("#cellarError").show();
-    }
-    clearFields();
+   } else {$("#cellarError").show();
+   } clearFields();
+  });
+
+  $("#cellarReturnButton").click(function() {
+    let cellarReturnAction = $("#cellarReturn").val();
+    if (cellarReturnAction.toLowerCase() === "move to hallway") {
+      $(".hallway").show();
+      $(".cellarReturn").hide();
+   } else if (cellarReturnAction.toLowerCase() === "use laser gun" && character.laserPosession === true) {
+      $("#killRatReturn").show();
+        character.increaseStats();
+    } else {$("#cellarReturnError").show();
+    } clearFields();
   });
 
   $("#atticButton").click(function() {
@@ -127,8 +141,7 @@ $(document).ready(function() {
       character.pickUpLaser();
     } else {
       $("#atticError").show();
-    }
-    clearFields();
+    } clearFields();
   });
 
   $("#parlorLockedButton").click(function() {
