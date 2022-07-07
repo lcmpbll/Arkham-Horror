@@ -169,27 +169,28 @@ $(document).ready(function() {
     } else {
       $("#parlorError").show();
     }
-  })
-    
-  $("#roboBattle").click(function() {
-
-    
-    battle(character, monster);
-    console.log(monster.health);
-    console.log(character.health);
-      if (monster.health <= 0) {
-        $(".cyborgDies").show();
-        $(".parlorUnlocked").hide();
-        
-        $("#parlorUnlockedError").hide();
-      } else if (character.health <= 0) {
-        $(".characterDies").show();
-        $(".parlorUnlocked").hide();
-        $("#parlorUnlockedError").hide();
-      } else {
-        $(".exchangeFire").show();
-      }
   });
-
- 
+    
+  $("#roboBattleButton").click(function() {
+    battle(character, monster);
+    $(".monsterMisses").hide();
+    $(".characterMisses").hide();
+    $("#monsterHealth").text(monster.health);
+    $("#characterHealth").text(character.health);
+    if (monster.health <= 0) {
+      $(".cyborgDies").show();
+      $(".monsterMisses").hide();
+      $(".characterMisses").hide();
+    } else if (character.health <= 0) {
+      $(".characterDies").show();
+      $(".monsterMisses").hide();
+      $(".characterMisses").hide();
+    } else if (monster.damage === 0) {
+      $(".monsterMisses").show();
+    } else if (character.damage === 0) {
+      $(".characterMisses").show();
+    } else {
+      $(".exchangeFire").show();
+    }
+  });
 });

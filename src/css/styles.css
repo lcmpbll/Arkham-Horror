@@ -186,5 +186,11 @@ body {
   50% {background-position:0 -100%,0 0}
 }
 
+.characterMisses {
+  display: none;
+}
 
+.monsterMisses {
+  display: none;
+}
 
