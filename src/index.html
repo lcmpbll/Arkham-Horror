@@ -84,7 +84,7 @@
             <p><span class="type" style="--n:1000">The stairs leading down to the cellar are covered in muddy fooprints.
                 The cellar has a large hole in the wall, big enough for someone to squeeze through. You peek your head through the wall and see it leads into the city sewer system.<br><br>Suddenly a giant mutated rat begins scurrying up the sewer wall. Just as you pull your head back into the cellar it pops through the hole and lands snarling in the middle of the room.</span></p>
             <div id="killRats">
-              <p><span class="type" style="--n:1000">Way to go! You have killed 3 mutated rats in the cellar.</span></p>
+              <p><span class="type" style="--n:1000">Way to go! You have killed a mutated rat in the cellar.</span></p>
             </div>
             <div id="cellarError">
               <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
@@ -163,15 +163,31 @@
             <input id="parlor" type="text">
             <button type="button" id="parlorLockedButton">Submit</button>
           </div>
-          <div class="attack">
-            <p><span class="type" style="--n:1000">"The Andriod falls to the ground, having taken its last step. Jim
-                explains Central Robotics Development
-                had
-                created an Andriod that became self aware, eventually lashing out at its creators and was the cause of
-                the
-                disapperances.
-                "Case is solved, you have save the world from Andriod attacking.</span></p>
+          <div class="roboBattle">
+            <p><span class="type" style="--n:1000">'You exchange fire with the android : </span></p>
+            <p><span class="type" style="--n:1000">'Your health:<span class="type" style="--n:1000" id="characterHealth"></span></span>
+              <p><span class="type" style="--n:1000">'Android Health:<span class="type" style="--n:1000" id="monsterHealth"></span></span>
+            <br>
+            <br>
+            <br>
+            <button type="button" id="roboBattleButton">Attack</button>
+          <div class="cyborgDies">
+            <p><span class="type" style="--n:1000">"The Andriod falls to the ground, having taken its last step. Jim explains Central Robotics Development
+              had
+              created an Andriod that became self aware, eventually lashing out at its creators and was the cause of the
+              disapperances.
+            "Case is solved, you have save the world from Andriod attacking.</span></p>
           </div>
+          <div class="characterMisses">
+            <p><span class="type" style="--n:1000">"Your shots richochet off the androids armor, it appears undamaged.</span></p>
+          </div>
+          <div class="monsterMisses">
+            <p><span class="type" style="--n:1000">"The android misses, laserbeams spray the wall behind you as you dodge out of the way.</span></p>
+          </div>
+          <div class="characterDies">
+            <p><span class="type" style="--n:1000">"You have fallen in battle, a valiant attempt. Jim cowers in the corner shrieking "Why, why did you come?  It will escape now -- You have doomed us all!".</span></p>
+          </div>
+        </div>
         </form>
         <div class="inventory">
           <p>Inventory:</p>

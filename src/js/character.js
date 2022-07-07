@@ -1,6 +1,4 @@
-//let character = new Character();
 export default class Character {
-
   constructor (damage) {
     this.damage = damage;
     this.inventory = [];
@@ -28,5 +26,4 @@ export default class Character {
     } 
     return this.damage;
   }
-
 }
