@@ -1,5 +1,4 @@
 export const battle = (character, monster) => {
- 
   character.shootLaser();
   monster.health -= character.damage;
   monster.monsterDamage();

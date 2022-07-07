@@ -5,8 +5,10 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+
 let character = new Character;
 let monster = new Monster;
+
 $(document).ready(function() {
   $("#menuButton").click(function() {
     $(".story").show();
