@@ -6,6 +6,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
+
 function clearFields() {
   $("#alley").val("");
   $("#alley2").val("");
@@ -21,11 +22,10 @@ let character = new Character;
 let monster = new Monster;
 
 $(document).ready(function() {
-
   $("#menuButton").click(function() {
     $(".story").show();
     $(".menu").hide();
-  })
+  });
 
   $("#startButton").click(function(){
   $(".alley").show();
@@ -60,7 +60,6 @@ $(document).ready(function() {
   } else $('#alley2Error').show();
   clearFields();
  });
-
   $("#hallwayButton").click(function() {
     let hallwayAction = $("#hallway").val();
     if (hallwayAction.toLowerCase() === "move to attic") {
@@ -155,7 +154,7 @@ $(document).ready(function() {
     } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === true ) {
       $(".parlorUnlocked").show();
       $(".parlorLocked").hide();
-       $("#parlorError").hide();
+      $("#parlorError").hide();
     } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === false ) {
       $("#parlorLockedError").show();
     }
@@ -169,13 +168,12 @@ $(document).ready(function() {
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
     } else if (parlorUnlockedAction.toLowerCase() === "use laser gun") {
-      battle(character, monster);
-      $(".attack").show();
+      $(".roboBattle").show();
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
     }
     else if (parlorUnlockedAction.toLowerCase() === "move to parlor") {
-      $(".attack").hide();
+      $(".roboBattle").hide();
       $(".parlorInterior").show();
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
@@ -190,15 +188,37 @@ $(document).ready(function() {
     let parlorUnlockedAction = $("#parlorInterior").val();
     if (parlorUnlockedAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
-      $(".parlorUnlocked").hide();
-      $("#parlorUnlockedError").hide();
+      $(".parlorInterior").hide();
+      $("#parlorError").hide();
     } else if (parlorUnlockedAction.toLowerCase() === "use laser gun") {
-      $(".attack").show();
-      $(".parlorUnlocked").hide();
-      $("#parlorUnlockedError").hide();
+      $(".roboBattle").show();
+      $("#parlorError").hide();
+      $(".parlorInterior").hide();
+    } else {
+      $("#parlorError").show();
     }
-    else {
-      $("#parlorUnlockedError").show();
+  });
+    
+  $("#roboBattleButton").click(function() {
+    battle(character, monster);
+    $(".monsterMisses").hide();
+    $(".characterMisses").hide();
+    $("#monsterHealth").text(monster.health);
+    $("#characterHealth").text(character.health);
+    if (monster.health <= 0) {
+      $(".cyborgDies").show();
+      $(".monsterMisses").hide();
+      $(".characterMisses").hide();
+    } else if (character.health <= 0) {
+      $(".characterDies").show();
+      $(".monsterMisses").hide();
+      $(".characterMisses").hide();
+    } else if (monster.damage === 0) {
+      $(".monsterMisses").show();
+    } else if (character.damage === 0) {
+      $(".characterMisses").show();
+    } else {
+      $(".exchangeFire").show();
     }
     clearFields();
   });
