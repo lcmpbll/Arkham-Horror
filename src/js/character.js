@@ -4,10 +4,12 @@ export default class Character {
   constructor (damage) {
     this.damage = damage;
     this.inventory = [];
+    this.exploration = [];
     this.health = 10;
     this.laserPosession = false;
     this.status = "alive";
     this.aim = 0;
+    this.cellar = false;
   }
   pickUpLaser() {
     let laserGun = {"name" : "laser gun"};
@@ -27,6 +29,12 @@ export default class Character {
       this.damage = 3 + Math.floor(Math.random() *(6 - 3 + 1));
     } 
     return this.damage;
+  }
+
+  cellarExploration() {
+    let cellar = {"name" : "cellarReturn"};
+    this.cellar = true;
+    this.exploration.push(cellar);
   }
 
 }

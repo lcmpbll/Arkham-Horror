@@ -62,7 +62,15 @@
   display: none;
 }
 
+#cellarReturnError {
+  display: none;
+}
+
 #killRats {
+  display: none;
+}
+
+#killRatReturn {
   display: none;
 }
 
