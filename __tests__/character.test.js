@@ -19,11 +19,11 @@ describe("Character", () => {
       
     });
 
-    test("should create a character whose this.inventory is empty", () => {
+    // test("should create a character whose this.inventory is empty", () => {
       
-      expect(newChar.inventory.length).toEqual(0);
+    //   expect(newChar.inventory.length).toEqual(0);
       
-    });
+    // });
 
     test("should create a character whose this.health is equal to 0", () => {
       
@@ -35,10 +35,10 @@ describe("Character", () => {
       expect(newChar.laserPosession).toEqual(true);
     })
 
-    test("should pick up laser and confirm true for laserPossession", () => {
-      newChar.pickUpLaser();
-      expect(newChar.inventory.length).toEqual(1);
-    })
+    // test("should pick up laser and confirm true for laserPossession", () => {
+    //   newChar.pickUpLaser();
+    //   expect(newChar.inventory.length).toEqual(1);
+    // })
     
     test("should increase aim and health when increaseStats is run", () => {
       newChar.increaseStats();

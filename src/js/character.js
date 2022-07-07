@@ -1,16 +1,16 @@
 export default class Character {
   constructor (damage) {
     this.damage = damage;
-    this.inventory = [];
+    //this.inventory = [];
     this.health = 10;
     this.laserPosession = false;
     this.status = "alive";
     this.aim = 0;
   }
   pickUpLaser() {
-    let laserGun = {"name" : "laser gun"};
+    //let laserGun = {"name" : "laser gun"};
     this.laserPosession = true;
-    this.inventory.push(laserGun);
+    //this.inventory.push(laserGun);
   }
   
   increaseStats() {
