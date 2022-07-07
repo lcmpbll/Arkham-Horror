@@ -30,6 +30,10 @@
   display: none;
 }
 
+.atticReturn{
+  display: none;
+}
+
 .cellar {
   display: none;
 }
@@ -125,6 +129,10 @@
 #pickUpLaser {
   display: none;
  }
+#atticReturnError{
+  display: none;
+}
+
 
 body {
   display: flex;
