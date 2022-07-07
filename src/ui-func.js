@@ -141,13 +141,12 @@ $(document).ready(function() {
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
     } else if (parlorUnlockedAction.toLowerCase() === "use laser gun") {
-      battle(character, monster);
-      $(".attack").show();
+      $(".roboBattle").show();
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
     }
     else if (parlorUnlockedAction.toLowerCase() === "move to parlor") {
-      $(".attack").hide();
+      $(".roboBattle").hide();
       $(".parlorInterior").show();
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
@@ -157,30 +156,39 @@ $(document).ready(function() {
     }
   });
 
-  $("#parlor Button").click(function() {
-    let parlorUnlockedAction = $("#parlorUnlocked").val();
+  $("#parlorButton").click(function() {
+    let parlorUnlockedAction = $("#parlorInterior").val();
     if (parlorUnlockedAction.toLowerCase() === "move to hallway") {
       $(".hallway").show();
-      $(".parlorUnlocked").hide();
-      $("#parlorUnlockedError").hide();
+      $(".parlorInterior").hide();
+      $("#parlorError").hide();
     } else if (parlorUnlockedAction.toLowerCase() === "use laser gun") {
-      battle(character, monster);
-      if (monster.health === 0) {
+      $(".roboBattle").show();
+      $("#parlorError").hide();
+      $(".parlorInterior").hide();
+    } else {
+      $("#parlorError").show();
+    }
+  })
+    
+  $("#roboBattle").click(function() {
+
+    
+    battle(character, monster);
+    console.log(monster.health);
+    console.log(character.health);
+      if (monster.health <= 0) {
         $(".cyborgDies").show();
         $(".parlorUnlocked").hide();
+        
         $("#parlorUnlockedError").hide();
-      } else if (character.health === 0) {
+      } else if (character.health <= 0) {
         $(".characterDies").show();
         $(".parlorUnlocked").hide();
         $("#parlorUnlockedError").hide();
       } else {
         $(".exchangeFire").show();
       }
-
-    }
-    else {
-      $("#parlorUnlockedError").show();
-    }
   });
 
  
