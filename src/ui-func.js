@@ -8,7 +8,6 @@ import './css/styles.css';
 let character = new Character;
 let monster = new Monster;
 $(document).ready(function() {
-
   $("#menuButton").click(function() {
     $(".story").show();
     $(".menu").hide();
@@ -110,7 +109,6 @@ $(document).ready(function() {
       $(".parlorLocked").hide();
       $("#parlorError").hide();
     } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === true ) {
-      console.log(character.laserPosession);
       $(".parlorUnlocked").show();
       $(".parlorLocked").hide();
       $("#parlorError").hide();
