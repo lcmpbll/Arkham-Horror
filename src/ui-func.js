@@ -6,7 +6,6 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
-
 function clearFields() {
   $("#alley").val("");
   $("#alley2").val("");
@@ -50,6 +49,7 @@ $(document).ready(function() {
     $(".authorities").hide();
     $('#alley2Error').hide();
   });
+
   $("#alley2Button").click(function() {
     let alley2Action = $("#alley2").val();
     if ((alley2Action.toLowerCase() === "move to house") || (alley2Action.toLowerCase() === "move to the house")) {
@@ -62,10 +62,16 @@ $(document).ready(function() {
   
   $("#hallwayButton").click(function() {
     let hallwayAction = $("#hallway").val();
-    if (hallwayAction.toLowerCase() === "move to attic") {
+    if (hallwayAction.toLowerCase() === "move to attic" && character.laserPosession === true) {
+      $(".atticReturn").show();
+      $(".hallway").hide();
+      $("#hallwayError").hide();
+    
+    } else if (hallwayAction.toLowerCase() === "move to attic") {
       $(".attic").show();
       $(".hallway").hide();
       $("#hallwayError").hide();
+
     } else if (hallwayAction.toLowerCase()  === "move to cellar" && character.cellar === true) {
       $(".cellarReturn").show();
       $(".hallway").hide();
@@ -126,6 +132,17 @@ $(document).ready(function() {
       $("#killRatReturn").show();
       character.increaseStats();
     } else {$("#cellarReturnError").show();
+    } clearFields();
+  });
+
+  $("#atticReturnButton").click(function() {
+    let atticReturnAction = $("#atticReturn").val();
+    if (atticReturnAction.toLowerCase() === "move to hallway") {
+      $(".hallway").show();
+      $(".atticReturn").hide();
+      $("#atticReturnError").hide();
+    } else {
+      $("#atticReturnError").show();
     } clearFields();
   });
 
