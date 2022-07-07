@@ -10,9 +10,9 @@ export default class Character {
     this.cellar = false;
   }
   pickUpLaser() {
-    let laserGun = {"name" : "laser gun"};
+    //let laserGun = {"name" : "laser gun"};
     this.laserPosession = true;
-    this.inventory.push(laserGun);
+    //this.inventory.push(laserGun);
   }
   
   increaseStats() {

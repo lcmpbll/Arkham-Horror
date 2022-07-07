@@ -37,7 +37,7 @@ describe('battle', () => {
     battle(newChar, newMonster);
     battle(newChar, newMonster);
     battle(newChar, newMonster);
-    expect(newChar.health).toBeLessThanOrEqual(0);
+    expect(newChar.health).toBeLessThanOrEqual(1);
     expect(newChar.status).toEqual("dead");
   })
 

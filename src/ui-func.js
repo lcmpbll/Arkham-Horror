@@ -28,8 +28,8 @@ $(document).ready(function() {
   });
 
   $("#startButton").click(function(){
-  $(".alley").show();
-  $(".story").hide();
+    $(".alley").show();
+    $(".story").hide();
   });
 
   $("#alleyButton").click(function() {
@@ -49,8 +49,7 @@ $(document).ready(function() {
     $(".alley2").show();
     $(".authorities").hide();
     $('#alley2Error').hide();
- });
-
+  });
  $("#alley2Button").click(function() {
   let alley2Action = $("#alley2").val();
   if ((alley2Action.toLowerCase() === "move to house") || (alley2Action.toLowerCase() === "move to the house")) {
@@ -169,6 +168,8 @@ $(document).ready(function() {
       $("#parlorUnlockedError").hide();
     } else if (parlorUnlockedAction.toLowerCase() === "use laser gun") {
       $(".roboBattle").show();
+      $("#monsterHealth").text(monster.health);
+      $("#characterHealth").text(character.health);
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
     }
@@ -192,6 +193,8 @@ $(document).ready(function() {
       $("#parlorError").hide();
     } else if (parlorUnlockedAction.toLowerCase() === "use laser gun") {
       $(".roboBattle").show();
+      $("#monsterHealth").text(monster.health);
+      $("#characterHealth").text(character.health);
       $("#parlorError").hide();
       $(".parlorInterior").hide();
     } else {
