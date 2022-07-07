@@ -2,9 +2,9 @@
 
 ![image](img/arkham.JPG)
 
-#### By _**(Liam Campbell, Ben Goodrow, PJ Perry, Peter Vang)**_
+#### By _**Liam Campbell, Ben Goodrow, PJ Perry, Peter Vang**_
 
-#### _{This is a simple RPG game.}_
+#### _This is a simple RPG game._
 
 ## Technologies Used
 
@@ -28,7 +28,7 @@
 * dotenv-webpack
 
 ## Description
-_{This is a RPG where players moves through rooms of the house via text commands. In certain rooms there are items to be picked up to advance the story. Upon arrival in the last room the player must fight a monster to advance to the final part of the story and win the game.}_
+_This is a RPG where players moves through rooms of the house via text commands. In certain rooms there are items to be picked up to advance the story. Upon arrival in the last room the player must fight a monster to advance to the final part of the story and win the game._
 
 ## Setup/Installation Requirements
 
