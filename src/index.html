@@ -9,41 +9,59 @@
   <div class="monitor">
     <div class="screenEdge">
       <div class="screen">
-          <div class="menu">
-            <p><span class="type" style="--n:1000"><strong>Arkham Horror 2077</strong> <br><br> Text commands: <br>Move to [room to move to here]<br>Pick up [item to pick up here<br>Use [item to be used]</span></p>
-            <button type="button" id="menuButton" class="btn-outline-success">Begin</button>
-          </div>
-          <div class="story">
-            <p><span class="type" style="--n:1000">"The town of Arkham hums with electricity. Holovid displays wash the night sky with neon colors. The
+        <div class="menu">
+          <p><span class="type" style="--n:1000"><strong>Arkham Horror 2077</strong> <br><br> Text commands: <br>Move to
+              [room to move to here]<br>Pick up [item to pick up here]<br>Use [item to be used]</span></p>
+          <button type="button" id="menuButton" class="btn-outline-success">Begin</button>
+        </div>
+        <div class="story">
+          <p><span class="type" style="--n:1000">"The town of Arkham hums with electricity. Holovid displays wash the
+              night sky with neon colors. The
               streets
               bustle with hover cars, traders and cargo trains taking parts, products and garbage to and from Central
               Robotics Development.Underneath the noise and bustle a series of mysterious disapperances have plagued the
               manufacturing hub. First Jim Grisswald, a robotics engineer, reported his youngest daughter Celia had gone
               missing. Then, Amy Sinclair reported her fiancé never came home after a night of drinking with friends.
-              One by one more disapperances piled up until one day a young cargo hauler found Celia's body on the edge of town at
+              One by one more disapperances piled up until one day a young cargo hauler found Celia's body on the edge
+              of town at
               the dump. As a private investigator you've been hired to sort out what's really happening."</span></p>
-            <button type="button" id="startButton" class="btn-outline-success">Continue</button>
-          </div>
+          <button type="button" id="startButton" class="btn-outline-success">Continue</button>
+        </div>
         <form>
           <div class="alley">
-            <p><span class="type" style="--n:1000">You arrive to the alley behind Jim Grisswald's house. Drizzling rain obscures your vision, but it looks like the back door is standing ajar. Your curiousity begins to overtake your rational brain. Do you leave and call the authorities? Or move to the house?</span></p>
+            <p><span class="type" style="--n:1000">You arrive to the alley behind Jim Grisswald's house. Drizzling rain
+                obscures your vision, but it looks like the back door is standing ajar. Your curiousity begins to
+                overtake your rational brain. Do you leave and <strong>call the authorities?</strong> Or<strong> move to
+                  the house?</strong></span></p>
             <div id="alleyError">
               <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
             </div>
-              <label for="alley">What would you like to do?</label>
-              <input id="alley" type="text">
-              <button type="button" id="alleyButton">Submit</button>
+            <label for="alley">What would you like to do?</label>
+            <input id="alley" type="text">
+            <button type="button" id="alleyButton">Submit</button>
           </div>
           <div class="authorities">
-            <p> <span class="type" style="--n:1000"> you call the police station but no one is answering ......</span></p>
+            <p> <span class="type" style="--n:1000"> you call the police station but no one is answering ......</span>
+            </p>
             <button type="button" id="authoritiesButton">hang up</button>
           </div>
+          <div class="alley2">
+            <p><span class="type" style="--n:1000">No one is coming. Do you move to the house?</span></p>
+            <div id="alley2Error">
+              <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
+            </div>
+            <label for="alley2">What would you like to do?</label>
+            <input id="alley2" type="text">
+            <button type="button" id="alley2Button">Submit</button>
+          </div>
           <div class="hallway">
-            <p><span class="type" style="--n:1000">Muddy footprints lead through the hallway towards a closed door. There are three other doors slightly
-              ajar
-              you can see stairs leading up through the attic door, stairs leading down through the cellar door, and
-              some
-              books and shelves in what appears to be the study.</span></p>
+            <p><span class="type" style="--n:1000">Muddy footprints lead through the hallway towards a closed door.
+                There are three other doors slightly
+                ajar
+                you can see stairs leading up through the <strong> attic </strong> door, stairs leading down through the
+                <strong> cellar</strong> door, and
+                some
+                books and shelves in what appears to be the<strong> study.</strong></span></p>
             <div id="hallwayError">
               <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
             </div>
@@ -52,11 +70,9 @@
             <button type="button" id="hallwayButton">Submit</button>
           </div>
           <div class="study">
-            <p><span class="type" style="--n:1000">"Inside the study you see a messy desk is covered in holovid articles, police reports, and witness
-              accounts.
-              You hear heavy footsteps plodding down the hallway outside the study door. The faint light passing through
-              the
-              keyhole goes dark for just a moment before the steps continue down the hallway."</span></p>
+            <p><span class="type" style="--n:1000">"Inside the study you see a messy desk is covered in holovid articles, police reports, and witness accounts.
+                You hear heavy footsteps plodding down the hallway outside the study door. The faint light passing through the
+                keyhole goes dark for just a moment before the steps continue down the <strong>hallway.</strong>"</span></p>
             <div id="studyError">
               <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
             </div>
@@ -65,43 +81,56 @@
             <button type="button" id="studyButton">Submit</button>
           </div>
           <div class="cellar">
-            <p><span class="type" style="--n:1000">The stairs leading down to the cellar are covered in muddy fooprints. The cellar has a large hole in the
-              wall, big enough for someone to squeeze through. You peek your head through the wall and see it leads into
-              the
-              city sewer system.</span></p>
+            <p><span class="type" style="--n:1000">The stairs leading down to the cellar are covered in muddy fooprints.
+                The cellar has a large hole in the wall, big enough for someone to squeeze through. You peek your head through the wall and see it leads into the city sewer system.<br><br>Suddenly a giant mutated rat begins scurrying up the sewer wall. Just as you pull your head back into the cellar it pops through the hole and lands snarling in the middle of the room.</span></p>
             <div id="killRats">
-              <p><span class="type" style="--n:1000">Way to go you have kill a rat in the cellar coming from the sewage.</span></p>
+              <p><span class="type" style="--n:1000">Way to go! You have killed a mutated rat in the cellar.</span></p>
             </div>
             <div id="cellarError">
               <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
             </div>
-
             <label for="cellarAction">What would you like to do?</label>
             <input id="cellar" type="text">
             <button type="button" id="cellarButton">Submit</button>
           </div>
+          <div class="cellarReturn">
+            <p><span class="type" style="--n:1000">Descending the stairs you see the rat has torn apart the cellar. Glass, broken pieces of shelving, and shredded canned goods are scattered across the floor. Upon reaching the bottom the mutant rat again turns its attention to you...</span></p>
+            <div id="killRats">
+              <p><span class="type" style="--n:1000">Way to go! You have killed 3 mutated rats in the cellar.</span></p>
+            </div>
+            <div id="cellarReturnError">
+              <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
+            </div>
+            <label for="cellarReturnAction">What would you like to do?</label>
+            <input id="cellarReturn" type="text">
+            <button type="button" id="cellarReturnButton">Submit</button>
+          </div>
           <div class="attic">
-            <p><span class="type" style="--n:1000"></span>"You climb the ladder to the attic. The feeling of being watched paralyzes you before making it to the
+            <p><span class="type" style="--n:1000"></span>"You climb the ladder to the attic. The feeling of being
+              watched paralyzes you before making it to the
               top
               of
               the ladder. For just a moment you think you can see the faint outline of a person in the corner. You
               notice
               a
-              old dusty old laser gun is within reach of the opening to the attic."</span></p>
+              <strong> old dusty old laser gun</strong> is within reach of the opening to the attic."</span>
+            </p>
             <div id="atticError">
               <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
             </div>
             <div id="pickUpLaser">
-              <p><span class="type" style="--n:1000">You pick up the laser gun, it is at partial charge still, probably 1 or 2 shots left!</span></p>
+              <p><span class="type" style="--n:1000">You pick up the laser gun, it is at partial charge still, probably
+                  1 or 2 shots left!</span></p>
             </div>
             <label for="atticAction">What would you want to do?</label>
             <input id="attic" type="text">
             <button type="button" id="atticButton">Submit</button>
           </div>
           <div class="parlorUnlocked">
-            <p><span class="type" style="--n:1000">You take aim and fire at the center of the laser field. The lasers spark and shudders before blinking out
-              of
-              exisitance.</span></p>
+            <p><span class="type" style="--n:1000">You take aim and fire at the center of the laser field. The lasers
+                spark and shudders before blinking out
+                of
+                exisitance.</span></p>
             <div id="parlorUnlockedError">
               <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
             </div>
@@ -110,18 +139,25 @@
             <button type="button" id="parlorUnlockedButton">Submit</button>
           </div>
           <div class="parlorInterior">
-    <p><span class="type" style="--n:1000">Jim Grisswald stands in the center of the parlor. "What have you done to the laser-field?" he screams, furious. Before you can answer a mechanical whirring gets louder and louder and a humanoid android bursts through the wall of the parlor advancing towards you.</span></p>
-    <div id="parlorError"><p><span class="type" style="--n:1000">Please select a viable option.</span></p></div>
-    <label for="parlorInteriorAction">What would you like to do?</label>
-    <input id="parlorInterior" type="text">
-    <button type="button" id="parlorButton">Submit</button>
-  </div>
-  <div class="parlorLocked">
-            <p><span class="type" style="--n:1000">The entrance the parlor is blocked by the faint blue glow of a laser-field. You pick up a button from the
-              door and toss it at the laser-field and watch it incinerate. Perhaps theres something that can help in the
-              study, cellar, or attic. You cannot move to the parlor.</span></p>
+            <p><span class="type" style="--n:1000">Jim Grisswald stands in the center of the parlor. "What have you done
+                to the laser-field?" he screams, furious. Before you can answer a mechanical whirring gets louder and
+                louder and <strong> a humanoid android bursts through the wall of the parlor advancing towards
+                  you.</strong></span></p>
+            <div id="parlorError">
+              <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
+            </div>
+            <label for="parlorInteriorAction">What would you like to do?</label>
+            <input id="parlorInterior" type="text">
+            <button type="button" id="parlorButton">Submit</button>
+          </div>
+          <div class="parlorLocked">
+            <p><span class="type" style="--n:1000">The entrance the parlor is blocked by the faint blue glow of a
+                laser-field. You pick up a button from the
+                door and toss it at the laser-field and watch it incinerate.<strong>Perhaps theres something that can
+                  help in the
+                  study, cellar, or attic. You cannot move to the parlor.</strong></span></p>
             <div id="parlorLockedError">
-              <p><span class="type" style="--n:1000"></span>Please select a viable option.</span></p>
+              <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
             </div>
             <label for="parlor">What would you like to do?</label>
             <input id="parlor" type="text">
@@ -130,8 +166,7 @@
           <div class="roboBattle">
             <p><span class="type" style="--n:1000">'You exchange fire with the android : </span></p>
             <p><span class="type" style="--n:1000">'Your health:<span class="type" style="--n:1000" id="characterHealth"></span></span>
-              <p><span class="type" style="--n:1000">'Android Health:<span class="type" style="--n:1000" id="monsterHealth"></span></span> 
-            
+              <p><span class="type" style="--n:1000">'Android Health:<span class="type" style="--n:1000" id="monsterHealth"></span></span>
             <br>
             <br>
             <br>
@@ -154,6 +189,10 @@
           </div>
         </div>
         </form>
+        <div class="inventory">
+          <p>Inventory:</p>
+          <p>Laser Gun</p>
+        </div>
       </div>
     </div>
   </div>

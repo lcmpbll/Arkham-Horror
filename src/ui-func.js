@@ -6,6 +6,18 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
+
+function clearFields() {
+  $("#alley").val("");
+  $("#alley2").val("");
+  $("#hallway").val("");
+  $("#study").val("");
+  $("#cellar").val("");
+  $("#attic").val("");
+  $("#parlor").val("");
+  $("#parlorUnlocked").val("");
+}
+
 let character = new Character;
 let monster = new Monster;
 
@@ -16,13 +28,13 @@ $(document).ready(function() {
   });
 
   $("#startButton").click(function(){
-    $(".alley").show();
-    $(".story").hide();
+  $(".alley").show();
+  $(".story").hide();
   });
 
   $("#alleyButton").click(function() {
     let alleyAction = $("#alley").val();
-    if (alleyAction.toLowerCase() === "move to house") {
+    if ((alleyAction.toLowerCase() === "move to house") || (alleyAction.toLowerCase() === "move to the house")) {
       $(".hallway").show();
       $(".alley").hide();
     } else if (alleyAction.toLowerCase() === "call the authorities"){
@@ -30,13 +42,23 @@ $(document).ready(function() {
       $(".alley").hide();
       $("#alleyError").hide();
     } else $("#alleyError").show();
+    clearFields();
   });
 
   $("#authoritiesButton").click(function() {
-    $(".alley").show();
+    $(".alley2").show();
     $(".authorities").hide();
-  });
+    $('#alley2Error').hide();
+ });
 
+ $("#alley2Button").click(function() {
+  let alley2Action = $("#alley2").val();
+  if ((alley2Action.toLowerCase() === "move to house") || (alley2Action.toLowerCase() === "move to the house")) {
+    $(".hallway").show();
+    $(".alley2").hide();
+    $('#alley2Error').hide();
+  } else $('#alley2Error').show();
+ });
   $("#hallwayButton").click(function() {
     let hallwayAction = $("#hallway").val();
     if (hallwayAction.toLowerCase() === "move to attic") {
@@ -63,6 +85,7 @@ $(document).ready(function() {
     } else {
       $("#hallwayError").show();
     }
+    clearFields();
   });
 
   $("#studyButton").click(function(){
@@ -74,6 +97,7 @@ $(document).ready(function() {
     } else{
       $("#studyError").show();
     }
+    clearFields();
   });
 
   $("#cellarButton").click(function() {
@@ -87,6 +111,7 @@ $(document).ready(function() {
     } else {
       $("#cellarError").show();
     }
+    clearFields();
   });
 
   $("#atticButton").click(function() {
@@ -98,10 +123,12 @@ $(document).ready(function() {
       $("#pickUpLaser").hide();
     } else if (atticAction.toLowerCase() === "pick up laser gun") {
       $("#pickUpLaser").show();
+      $('.inventory').show();
       character.pickUpLaser();
     } else {
       $("#atticError").show();
     }
+    clearFields();
   });
 
   $("#parlorLockedButton").click(function() {
@@ -116,22 +143,8 @@ $(document).ready(function() {
       $("#parlorError").hide();
     } else if (parlorAction.toLowerCase() === "use laser gun" && character.laserPosession === false ) {
       $("#parlorLockedError").show();
-
-    } else if (parlorAction.toLowerCase() === "move to attic") {
-      $(".attic").show();
-      $(".parlorLocked").hide();
-      $("#parlorError").hide();
-    } else if (parlorAction.toLowerCase() === "move to cellar") {
-      $(".cellar").show();
-      $(".parlorLocked").hide();
-      $("#parlorError").hide();
-    } else if (parlorAction.toLowerCase() === "move to study") {
-      $(".study").show();
-      $(".parlorLocked").hide();
-      $("#parlorError").hide();
-    } else {
-      $("#parlorLockedError").show();
     }
+    clearFields();
   });
 
   $("#parlorUnlockedButton").click(function() {
@@ -154,6 +167,7 @@ $(document).ready(function() {
     else {
       $("#parlorUnlockedError").show();
     }
+    clearFields();
   });
 
   $("#parlorButton").click(function() {
@@ -192,5 +206,6 @@ $(document).ready(function() {
     } else {
       $(".exchangeFire").show();
     }
+    clearFields();
   });
 });

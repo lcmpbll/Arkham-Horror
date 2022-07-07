@@ -1,11 +1,20 @@
 .story {
   display: none;
 }
+
 .authorities{
   display: none;
 }
 
+.inventory {
+  display: none;
+}
+
 .alley {
+  display: none;
+}
+
+.alley2 {
   display: none;
 }
 
@@ -22,6 +31,10 @@
 }
 
 .cellar {
+  display: none;
+}
+
+.cellarReturn {
   display: none;
 }
 
