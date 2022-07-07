@@ -1,8 +1,8 @@
 export default class Character {
   constructor (damage) {
     this.damage = damage;
-    this.inventory = [];
-    this.exploration = [];
+    // this.inventory = [];
+    // this.exploration = [];
     this.health = 10;
     this.laserPosession = false;
     this.status = "alive";
@@ -30,9 +30,9 @@ export default class Character {
   }
 
   cellarExploration() {
-    let cellar = {"name" : "cellarReturn"};
+    //let cellar = {"name" : "cellarReturn"};
     this.cellar = true;
-    this.exploration.push(cellar);
+    //this.exploration.push(cellar);
   }
 
 
