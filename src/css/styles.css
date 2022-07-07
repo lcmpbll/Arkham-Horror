@@ -1,6 +1,9 @@
 .story {
   display: none;
 }
+.authorities{
+  display: none;
+}
 
 .alley {
   display: none;
@@ -26,7 +29,27 @@
   display: none;
 }
 
-.attack {
+.exchangeFire {
+  display: none;
+}
+
+.roboBattle {
+  display: none;
+}
+
+.cyborgDies {
+  display: none;
+}
+
+.characterDies {
+  display: none;
+}
+
+.characterMisses {
+  display: none;
+}
+
+.monsterMisses {
   display: none;
 }
 
@@ -81,10 +104,6 @@
 #pickUpLaser {
   display: none;
  }
-
-.authorities{
-  display: none;
-}
 
 body {
   display: flex;
@@ -164,7 +183,6 @@ body {
   animation: 
    b .3s infinite steps(1),   
    t calc(var(--n)*.05s) steps(var(--n)) forwards;
-   
 }
 
 @keyframes t{
@@ -173,6 +191,3 @@ body {
 @keyframes b{
   50% {background-position:0 -100%,0 0}
 }
-
-
-
