@@ -171,7 +171,7 @@ $(document).ready(function() {
     } else if (parlorAction.toLowerCase().includes("laser") && character.laserPosession === true ) {
       $(".parlorUnlocked").show();
       $(".parlorLocked").hide();
-      $("#parlorError").hide();
+      $("#parlorLockedError").hide();
     } else if (parlorAction.toLowerCase().includes("laser") && character.laserPosession === false ) {
       $("#parlorLockedError").show();
     } else { 
