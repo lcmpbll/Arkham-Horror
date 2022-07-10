@@ -175,7 +175,7 @@ $(document).ready(function() {
     } else if (parlorAction.toLowerCase().includes("laser") && character.laserPosession === false ) {
       $("#parlorLockedError").show();
     } else { 
-      $('#parlorLockedError')}
+      $('#parlorLockedError').show(); }
     
     clearFields();
   });
