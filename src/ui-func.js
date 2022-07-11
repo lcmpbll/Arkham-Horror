@@ -186,7 +186,7 @@ $(document).ready(function() {
       $(".hallway").show();
       $(".parlorUnlocked").hide();
       $("#parlorUnlockedError").hide();
-    } else if (parlorUnlockedAction.toLowerCase.includes("laser")) {
+    } else if (parlorUnlockedAction.toLowerCase().includes("laser")) {
       $(".roboBattle").show();
       $("#monsterHealth").text(monster.health);
       $("#characterHealth").text(character.health);
