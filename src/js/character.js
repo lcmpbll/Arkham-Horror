@@ -19,7 +19,7 @@ export default class Character {
   }
 
   findAmmo() {
-    this.ammo += 1;
+    this.ammo += 2;
   }
 
   shootLaser() {
