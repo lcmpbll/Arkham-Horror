@@ -21,7 +21,6 @@ describe("Character", () => {
 
 
     test("should create a character whose this.health is equal to 0", () => {
-      
       expect(newChar.aim).toEqual(0);
     });
 
@@ -45,6 +44,7 @@ describe("Character", () => {
 
     test("Should return damage between 3-6 when shootLaser is called", () => {
       newChar.increaseStats();
+      newChar.pickUpLaser();
       newChar.shootLaser();
       expect(newChar.damage).toBeGreaterThanOrEqual(3);
       expect(newChar.damage).toBeLessThanOrEqual(6);
@@ -72,6 +72,20 @@ describe("Character", () => {
     test("Should read char.cellar as true after cellarExploration is called", () => {
       newChar.cellarExploration();
       expect(newChar.cellar).toEqual(true);
+    })
+
+    test("Should remove ammo from the count if the character shoots laser", () => {
+      newChar.pickUpLaser();
+      newChar.shootLaser();
+      expect(newChar.ammo).toEqual(1);
+    })
+
+    test("Should do no damage if there isn't any ammo", () => {
+      newChar.pickUpLaser();
+      newChar.shootLaser();
+      newChar.shootLaser();
+      newChar.shootLaser();
+      expect(newChar.damage).toEqual(0);
     })
 
   })

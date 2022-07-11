@@ -26,7 +26,7 @@ export default class Character {
     if (this.aim === 0 && this.ammo > 0) {
       this.damage = Math.floor(Math.random()* (6 + 1));
       this.ammo -= 1;
-    } else if (ammo > 0) {
+    } else if (this.ammo > 0) {
       this.damage = 3 + Math.floor(Math.random() *(6 - 3 + 1));
       this.ammo -= 1;
     } else {
