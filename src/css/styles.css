@@ -42,6 +42,10 @@
   display: none;
 }
 
+.cellarReturnDeadRat {
+  display:none;
+}
+
 .parlorLocked {
   display: none;
 }
@@ -82,7 +86,15 @@
   display: none;
 }
 
+#pileOfDebris {
+  display: none;
+}
+
 #hallwayError {
+  display: none;
+}
+
+#searchDesk {
   display: none;
 }
 
@@ -98,11 +110,19 @@
   display: none;
 }
 
+#cellarReturnDeadRatError {
+  display: none;
+}
+
 #killRats {
   display: none;
 }
 
 #killRatReturn {
+  display: none;
+}
+
+#investigateRat {
   display: none;
 }
 
@@ -129,6 +149,7 @@
 #pickUpLaser {
   display: none;
  }
+ 
 #atticReturnError{
   display: none;
 }
