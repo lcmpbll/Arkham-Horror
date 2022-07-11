@@ -19,11 +19,6 @@ describe("Character", () => {
       
     });
 
-    // test("should create a character whose this.inventory is empty", () => {
-      
-    //   expect(newChar.inventory.length).toEqual(0);
-      
-    // });
 
     test("should create a character whose this.health is equal to 0", () => {
       
@@ -34,11 +29,6 @@ describe("Character", () => {
       newChar.pickUpLaser();
       expect(newChar.laserPosession).toEqual(true);
     })
-
-    // test("should pick up laser and confirm true for laserPossession", () => {
-    //   newChar.pickUpLaser();
-    //   expect(newChar.inventory.length).toEqual(1);
-    // })
     
     test("should increase aim and health when increaseStats is run", () => {
       newChar.increaseStats();
@@ -59,6 +49,29 @@ describe("Character", () => {
       expect(newChar.damage).toBeGreaterThanOrEqual(3);
       expect(newChar.damage).toBeLessThanOrEqual(6);
       
+    })
+
+    test("Should have zero ammo when character has not found laser gun or ammo", () => {
+      expect(newChar.ammo).toEqual(0);
+    })
+
+    test("Should add two ammo when character finds laser gun", () => {
+      newChar.pickUpLaser();
+      expect(newChar.ammo).toEqual(2);
+    })
+
+    test("Should add an ammo to the count when findAmmo() is called", () => {
+      newChar.findAmmo();
+      expect(newChar.ammo).toEqual(2)
+    })
+
+    test("Should read this.cellar as false if the character has not been in the cellar", () => {
+      expect(newChar.cellar).toEqual(false);
+    })
+
+    test("Should read char.cellar as true after cellarExploration is called", () => {
+      newChar.cellarExploration();
+      expect(newChar.cellar).toEqual(true);
     })
 
   })
