@@ -42,6 +42,7 @@ describe('battle', () => {
   })
 
   test('should report that the monster is dead if their health goes to 0 or below', () => {
+    newChar.ammo = 10;
     battle(newChar, newMonster); 
     battle(newChar, newMonster);
     battle(newChar, newMonster);
