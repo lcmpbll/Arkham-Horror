@@ -10,7 +10,7 @@
     <div class="screenEdge">
       <div class="screen">
         <div class="menu">
-          <p><span class="type" style="--n:1000"><strong>Arkham Horror 2077</strong> <br><br> Text commands: <br>Move to [room to move to here]<br>Pick up [item to pick up here]<br>Use [item to be used]</span></p>
+          <p><span class="type" style="--n:1000"><strong>Arkham Horror 2077</strong> <br><br> Text commands: <br>Move to [room to move to here]<br>Inspect [item to inspect]<br>Pick up [item to pick up here]<br>Use [item to be used]</span></p>
           <button type="button" id="menuButton" class="btn-outline-success">Begin</button>
         </div>
         
@@ -21,7 +21,10 @@
 
         <form>
           <div class="alley">
-            <p><span class="type" style="--n:1000">You arrive to the alley behind Jim Grisswald's house. Drizzling rain obscures your vision, but it looks like the back door is standing ajar. Your curiousity begins to overtake your rational brain. Do you leave and <strong>call the authorities?</strong> Or<strong> move to the house?</strong></span></p>
+            <p><span class="type" style="--n:1000">You arrive to the alley behind Jim Grisswald's house. Drizzling rain obscures your vision, but it looks like the back door is standing ajar, there is a <strong>pile of debris</strong> near the door. Your curiousity begins to overtake your rational brain. Do you leave and <strong>call the authorities?</strong> Or<strong> move to the house?</strong></span></p>
+            <div id="pileOfDebris">
+              <p>You find 2 power cells and add them to your inventory.</p>
+            </div>
             <div id="alleyError">
               <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
             </div>
@@ -56,7 +59,11 @@
           </div>
 
           <div class="study">
-            <p><span class="type" style="--n:1000">"Inside the study you see a messy desk is covered in holovid articles, police reports, and witness accounts. You hear heavy footsteps plodding down the hallway outside the study door. The faint light passing through the keyhole goes dark for just a moment before the steps continue down the <strong>hallway</strong>."</span></p>
+            <p><span class="type" style="--n:1000">Inside the study you see a messy <strong>desk</strong> is covered in holovid articles, police reports, and witness accounts. You hear heavy footsteps plodding down the hallway outside the study door. The faint light passing through the keyhole goes dark for just a moment before the steps continue down the <strong>hallway</strong>."</span></p>
+            <div id="searchDesk">
+              <p>You lean over the desk taking a closer look, there are red circles drawn around portions of the police report including a witness interview saying they saw a 7ft tall man partially painted silver. You collect two power cells from a lower drawer.
+              </p>
+            </div>
             <div id="studyError">
               <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
             </div>
@@ -68,7 +75,7 @@
           <div class="cellar">
             <p><span class="type" style="--n:1000">The stairs leading down to the cellar are covered in muddy fooprints. The cellar has a large hole in the wall, big enough for someone to squeeze through. You peek your head through the wall and see it leads into the city sewer system.<br><br>Suddenly a giant mutated rat begins scurrying up the sewer wall. Just as you pull your head back into the cellar it pops through the hole and lands snarling in the middle of the room.</span></p>
             <div id="killRats">
-              <p><span class="type" style="--n:1000">Way to go! You have killed a mutated rat in the cellar, you feel more confident with the laser gun in your hand.</span></p>
+              <p><span class="type" style="--n:1000">Way to go! You have killed a mutated <strong>rat</strong> in the cellar, you begin to feel more confident with the laser gun in your hand.</span></p>
             </div>
             <div id="cellarError">
               <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
@@ -81,7 +88,7 @@
           <div class="cellarReturn">
             <p><span class="type" style="--n:1000">Descending the stairs you see the rat has torn apart the cellar. Glass, broken pieces of shelving, and shredded canned goods are scattered across the floor. Upon reaching the bottom the mutant rat again turns its attention to you...</span></p>
             <div id="killRatReturn">
-              <p><span class="type" style="--n:1000">Way to go! You have killed the mutated rat in the cellar, you feel more confident with the laser gun in your hand.</span></p>
+              <p><span class="type" style="--n:1000">Way to go! You have killed the mutated <strong>rat</strong> in the cellar, you feel more confident with the laser gun in your hand.</span></p>
             </div>
             <div id="cellarReturnError">
               <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
@@ -89,6 +96,19 @@
             <label for="cellarReturnAction">What would you like to do?</label>
             <input id="cellarReturn" type="text">
             <button type="button" id="cellarReturnButton">Submit</button>
+          </div>
+
+          <div class="cellarReturnDeadRat">
+            <p><span class="type" style="--n:1000">The cellar is quiet, the corpse of the <strong>rat</strong> lays on the floor before you.</span></p>
+            <div id="investigateRat">
+              <p><span class="type" style="--n:1000">Taking a closer look you see that portions of the rat have been replace with cybernetic parts.</span></p>
+            </div>
+            <div id="cellarReturnError">
+              <p><span class="type" style="--n:1000">Please select a viable option.</span></p>
+            </div>
+            <label for="cellarReturnRatAction">What would you like to do?</label>
+            <input id="cellarRatReturn" type="text">
+            <button type="button" id="cellarReturnDeadRatButton">Submit</button>
           </div>
 
           <div class="attic">
@@ -172,6 +192,7 @@
         <div class="inventory">
           <p>Inventory:</p>
           <p>Laser Gun</p>
+          <p>ammo: <span id="ammo"></span></p>
         </div>
 
       </div>
