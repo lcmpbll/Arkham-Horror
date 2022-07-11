@@ -12,7 +12,6 @@ describe('battle', () => {
   });
 
   test('should have a character and monster battle', () => {
-    
     expect(battle(newChar, newMonster)).toEqual("Battle is happening");
   });
 
@@ -52,4 +51,5 @@ describe('battle', () => {
     expect(newMonster.health).toBeLessThanOrEqual(0);
     expect(newMonster.status).toEqual("dead");
   })
+  
 })
