@@ -23,13 +23,15 @@ export default class Character {
   }
 
   shootLaser() {
-    if (this.aim === 0) {
+    if (this.aim === 0 && this.ammo > 0) {
       this.damage = Math.floor(Math.random()* (6 + 1));
       this.ammo -= 1;
-    } else {
+    } else if (ammo > 0) {
       this.damage = 3 + Math.floor(Math.random() *(6 - 3 + 1));
       this.ammo -= 1;
-    } 
+    } else {
+      this.damage = 0;
+    }
     return this.damage;
   }
 
