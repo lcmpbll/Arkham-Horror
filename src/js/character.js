@@ -7,10 +7,11 @@ export default class Character {
     this.aim = 0;
     this.cellar = false;
     this.ammo = 0;
+    this.rat = false;
   }
   pickUpLaser() {
     this.laserPosession = true;
-    this.ammo = 2;
+    this.ammo += 2;
   }
   
   increaseStats() {

@@ -88,6 +88,12 @@ describe("Character", () => {
       expect(newChar.damage).toEqual(0);
     })
 
+    test("Should have 4 ammo after picking up ammo and finding the laser gun", () => {
+      newChar.pickUpLaser();
+      newChar.findAmmo();
+      expect(newChar.ammo).toEqual(4);
+    })
+
   })
 
 
