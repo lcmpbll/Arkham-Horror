@@ -119,11 +119,14 @@ $(document).ready(function() {
       $(".study").hide();
       $("#studyError").hide();
       $("#searchDesk").hide();
-    } else if (studyAction.toLowerCase().includes("desk")) {
+    } else if (studyAction.toLowerCase().includes("desk") && character.deskSearched === false) {
       $("#searchDesk").show();
       $("#studyError").hide();
       character.findAmmo();
       displayAmmo();
+    } else if (studyAction.toLowerCase().includes("desk") && character.deskSearched === true) {
+      $("#searchedDesk").show()
+      ("#studyError").hide()  
     } else {
       $("#studyError").show();
     } clearFields();
