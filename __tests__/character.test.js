@@ -94,6 +94,15 @@ describe("Character", () => {
       expect(newChar.ammo).toEqual(4);
     })
 
+    test("Should have the quality character.deskSearched = false if the character has not searched the desk yet", () =>{
+      expect(newChar.deskSearched).toEqual(false);
+    })
+
+    test("Should have the quality character.deskSearched = true if the character has searched the desk", () =>{
+      newChar.searchDesk()
+      expect(newChar.deskSearched).toEqual(true);
+    })
+
   })
 
 

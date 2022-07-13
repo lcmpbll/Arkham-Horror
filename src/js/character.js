@@ -8,10 +8,15 @@ export default class Character {
     this.cellar = false;
     this.ammo = 0;
     this.rat = false;
+    this.deskSearched = false;
   }
   pickUpLaser() {
     this.laserPosession = true;
     this.ammo += 2;
+  }
+
+  searchDesk() {
+    this.deskSearched = true;
   }
   
   increaseStats() {
