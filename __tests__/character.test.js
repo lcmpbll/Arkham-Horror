@@ -103,6 +103,16 @@ describe("Character", () => {
       expect(newChar.deskSearched).toEqual(true);
     })
 
+
+    test("Should have the quality character.rat = false if the character has not searched the rat", () =>{
+      expect(newChar.rat).toEqual(false);
+    })
+
+    test("Should have the quality character.rat = true if the character has searched the rat", () =>{
+      newChar.searchRat();
+      expect(newChar.rat).toEqual(true);
+    })
+
   })
 
 
