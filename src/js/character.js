@@ -15,6 +15,10 @@ export default class Character {
     this.ammo += 2;
   }
 
+  searchRat() {
+    this.rat = true;
+  }
+
   searchDesk() {
     this.deskSearched = true;
   }

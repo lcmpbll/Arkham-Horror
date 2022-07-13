@@ -119,14 +119,16 @@ $(document).ready(function() {
       $(".study").hide();
       $("#studyError").hide();
       $("#searchDesk").hide();
+      $("$searchedDesk").hide();
     } else if (studyAction.toLowerCase().includes("desk") && character.deskSearched === false) {
       $("#searchDesk").show();
       $("#studyError").hide();
       character.findAmmo();
       displayAmmo();
     } else if (studyAction.toLowerCase().includes("desk") && character.deskSearched === true) {
-      $("#searchedDesk").show()
-      ("#studyError").hide()  
+      $("#searchedDesk").show();
+      $("#searchDesk").hide();
+      $("#studyError").hide();  
     } else {
       $("#studyError").show();
     } clearFields();
@@ -172,7 +174,7 @@ $(document).ready(function() {
     let cellarRatReturnAction = $("#cellarRatReturn").val();
     if (character.rat === false) {
       character.findAmmo();
-      character.rat = true;
+      character.searchRat();
       displayAmmo();
       $("#findAmmo").show();
     } else {
@@ -182,7 +184,8 @@ $(document).ready(function() {
       $(".hallway").show();
       $("#cellarRatReturnError").hide();
       $(".cellarReturnDeadRat").hide();
-
+    } else {
+      $("#cellarRatReturnError").show();
     }
     clearFields();
   });
