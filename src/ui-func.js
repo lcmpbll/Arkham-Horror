@@ -15,12 +15,18 @@ function clearFields() {
   $("#attic").val("");
   $("#parlor").val("");
   $("#parlorUnlocked").val("");
+  $("#cellarRatReturn").val("");
+}
+
+function displayAmmo() {
+  $("#ammo").text(character.ammo);
 }
 
 let character = new Character;
 let monster = new Monster;
 
 $(document).ready(function() {
+  
   $("#menuButton").click(function() {
     $(".story").show();
     $(".menu").hide();
@@ -36,10 +42,14 @@ $(document).ready(function() {
     if ((alleyAction.toLowerCase().includes("house"))) {
       $(".hallway").show();
       $(".alley").hide();
-    } else if (alleyAction.toLowerCase() === "call the authorities"){
+    } else if (alleyAction.toLowerCase().includes("call")) {
       $(".authorities").show();
       $(".alley").hide();
       $("#alleyError").hide();
+    } else if (alleyAction.toLowerCase().includes("investigate")) {
+      $("#pileOfDebris").show();
+      character.findAmmo();
+      displayAmmo();
     } else $("#alleyError").show();
     clearFields();
   });
@@ -66,12 +76,14 @@ $(document).ready(function() {
       $(".atticReturn").show();
       $(".hallway").hide();
       $("#hallwayError").hide();
-    
     } else if (hallwayAction.toLowerCase().includes("attic")) {
       $(".attic").show();
       $(".hallway").hide();
       $("#hallwayError").hide();
-
+    } else if (hallwayAction.toLowerCase().includes("cellar") && character.aim > 0 && character.cellar === true) {
+      $(".cellarReturnDeadRat").show();
+      $(".hallway").hide();
+      $("#hallwayError").hide();
     } else if (hallwayAction.toLowerCase().includes("cellar") && character.cellar === true) {
       $(".cellarReturn").show();
       $(".hallway").hide();
@@ -100,13 +112,20 @@ $(document).ready(function() {
     clearFields();
   });
 
-  $("#studyButton").click(function(){
+  $("#studyButton").click(function() {
     let studyAction = $("#study").val();
     if (studyAction.toLowerCase().includes("hallway")) {
       $(".hallway").show();
       $(".study").hide();
       $("#studyError").hide();
-    } else {$("#studyError").show();
+      $("#searchDesk").hide();
+    } else if (studyAction.toLowerCase().includes("desk")) {
+      $("#searchDesk").show();
+      $("#studyError").hide();
+      character.findAmmo();
+      displayAmmo();
+    } else {
+      $("#studyError").show();
     } clearFields();
   });
 
@@ -119,7 +138,12 @@ $(document).ready(function() {
     } else if (cellarAction.toLowerCase().includes("laser") && character.laserPosession === true) {
       $("#killRats").show();
       character.increaseStats();
-    } else {$("#cellarError").show();
+    } else if (cellarAction.toLowerCase().includes("rat") && character.aim > 0) {
+      $(".cellarReturnDeadRat").show();
+      $("#investigateRat").show();
+      $(".cellar").hide();
+    } else {
+      $("#cellarError").show();
     } clearFields();
   });
 
@@ -128,11 +152,36 @@ $(document).ready(function() {
     if (cellarReturnAction.toLowerCase().includes("hallway")) {
       $(".hallway").show();
       $(".cellarReturn").hide();
+    } else if (cellarReturnAction.toLower().includes("rat") && character.aim > 0) {
+      $(".cellarReturnDeadRat").show();
+      $("#investigateRat").show();
+      $(".cellarReturn").hide();
+      $("#cellarReturnError").hide();
     } else if (cellarReturnAction.toLowerCase().includes("laser") && character.laserPosession === true) {
       $("#killRatReturn").show();
-      character.increaseStats();
-    } else {$("#cellarReturnError").show();
+      character.increaseStats(); 
+    } else {
+      $("#cellarReturnError").show();
     } clearFields();
+  });
+
+  $("#cellarReturnDeadRatButton").click(function() {
+    let cellarRatReturnAction = $("#cellarRatReturn").val();
+    if (character.rat === false) {
+      character.findAmmo();
+      character.rat = true;
+      displayAmmo();
+      $("#findAmmo").show();
+    } else {
+      $("#findAmmo").hide();
+    }
+    if (cellarRatReturnAction.toLowerCase().includes("hallway")) {
+      $(".hallway").show();
+      $("#cellarRatReturnError").hide();
+      $(".cellarReturnDeadRat").hide();
+
+    }
+    clearFields();
   });
 
   $("#atticReturnButton").click(function() {
@@ -156,7 +205,9 @@ $(document).ready(function() {
     } else if (atticAction.toLowerCase().includes("laser")) {
       $("#pickUpLaser").show();
       $('.inventory').show();
+      $("#atticError").hide();
       character.pickUpLaser();
+      console.log(character.ammo);
     } else {
       $("#atticError").show();
     } clearFields();
@@ -181,6 +232,7 @@ $(document).ready(function() {
   });
 
   $("#parlorUnlockedButton").click(function() {
+    displayAmmo();
     let parlorUnlockedAction = $("#parlorUnlocked").val();
     if (parlorUnlockedAction.toLowerCase().includes("hallway")) {
       $(".hallway").show();
@@ -188,6 +240,7 @@ $(document).ready(function() {
       $("#parlorUnlockedError").hide();
     } else if (parlorUnlockedAction.toLowerCase().includes("laser")) {
       $(".roboBattle").show();
+      displayAmmo();
       $("#monsterHealth").text(monster.health);
       $("#characterHealth").text(character.health);
       $(".parlorUnlocked").hide();
@@ -213,6 +266,7 @@ $(document).ready(function() {
       $("#parlorError").hide();
     } else if (parlorUnlockedAction.toLowerCase().includes("laser")) {
       $(".roboBattle").show();
+      displayAmmo();
       $("#monsterHealth").text(monster.health);
       $("#characterHealth").text(character.health);
       $("#parlorError").hide();
@@ -228,6 +282,7 @@ $(document).ready(function() {
     $(".characterMisses").hide();
     $("#monsterHealth").text(monster.health);
     $("#characterHealth").text(character.health);
+    displayAmmo();
     if (monster.health <= 0) {
       $(".cyborgDies").show();
       $(".monsterMisses").hide();
@@ -247,4 +302,5 @@ $(document).ready(function() {
     }
     clearFields();
   });
+  
 });
