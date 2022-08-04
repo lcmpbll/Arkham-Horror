@@ -178,10 +178,12 @@ $(document).ready(function() {
     $("#characterHealth").text(character.health);
     if (monster.health <= 0) {
       $(".cyborgDies").show();
+      $("#restartButton").show();
       $(".monsterMisses").hide();
       $(".characterMisses").hide();
     } else if (character.health <= 0) {
       $(".characterDies").show();
+      $("#restartButton").show();
       $(".monsterMisses").hide();
       $(".characterMisses").hide();
     } else if (monster.damage === 0) {
@@ -192,4 +194,12 @@ $(document).ready(function() {
       $(".exchangeFire").show();
     }
   });
+  
+  $("#restartButton").click(function() {
+    $(".menu").show();
+    $(".cyborgDies").hide();
+    $(".characterDies").hide();
+    $(".roboBattle").hide();
+    
+  })
 });
