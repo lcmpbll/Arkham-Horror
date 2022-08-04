@@ -105,6 +105,10 @@
 #pickUpLaser {
   display: none;
  }
+ 
+ #restartButton {
+  display: none;
+ }
 
 body {
   display: flex;
