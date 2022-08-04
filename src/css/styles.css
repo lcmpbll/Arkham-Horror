@@ -6,7 +6,15 @@
   display: none;
 }
 
+.inventory {
+  display: none;
+}
+
 .alley {
+  display: none;
+}
+
+.alley2 {
   display: none;
 }
 
@@ -22,8 +30,20 @@
   display: none;
 }
 
+.atticReturn{
+  display: none;
+}
+
 .cellar {
   display: none;
+}
+
+.cellarReturn {
+  display: none;
+}
+
+.cellarReturnDeadRat {
+  display:none;
 }
 
 .parlorLocked {
@@ -66,7 +86,15 @@
   display: none;
 }
 
+#pileOfDebris {
+  display: none;
+}
+
 #hallwayError {
+  display: none;
+}
+
+#searchDesk {
   display: none;
 }
 
@@ -78,7 +106,23 @@
   display: none;
 }
 
+#cellarReturnError {
+  display: none;
+}
+
+#cellarRatReturnError {
+  display: none;
+}
+
 #killRats {
+  display: none;
+}
+
+#killRatReturn {
+  display: none;
+}
+
+#investigateRat {
   display: none;
 }
 
@@ -105,6 +149,11 @@
 #pickUpLaser {
   display: none;
  }
+ 
+#atticReturnError{
+  display: none;
+}
+
 
 body {
   display: flex;
