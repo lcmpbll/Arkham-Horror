@@ -231,9 +231,21 @@ $(document).ready(function() {
       $("#parlorLockedError").hide();
     } else if (parlorAction.toLowerCase().includes("laser") && character.laserPosession === false ) {
       $("#parlorLockedError").show();
-    } else { 
-      $('#parlorLockedError').show(); }
-    
+    } else if (parlorAction.toLowerCase() === "move to attic") {
+      $(".attic").show();
+      $(".parlorLocked").hide();
+      $("#parlorError").hide();
+    } else if (parlorAction.toLowerCase() === "move to cellar") {
+      $(".cellar").show();
+      $(".parlorLocked").hide();
+      $("#parlorError").hide();
+    } else if (parlorAction.toLowerCase() === "move to study") {
+      $(".study").show();
+      $(".parlorLocked").hide();
+      $("#parlorError").hide();
+    } else {
+      $("#parlorLockedError").show();
+    }
     clearFields();
   });
 
