@@ -6,6 +6,8 @@
 
 #### _This is a simple RPG game._
 
+### You can play this game [here](https://lcmpbll.github.io/Arkham-Horror/)
+
 ## Technologies Used
 
 * Babel
