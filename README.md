@@ -52,7 +52,7 @@ _This is a RPG where players moves through rooms of the house via text commands.
 
 ## License
 
-Copyright](LICENSE) (c) _07/06/2022_ _Liam Campbell Ben Goodrow PJ Perry Peter Vang_
+[Copyright](LICENSE) (c) _07/06/2022_ _Liam Campbell Ben Goodrow PJ Perry Peter Vang_
 ## Contact Information
 
 Feel free to reach out to us via github:  
